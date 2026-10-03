@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="landing-page d-flex flex-column align-items-center justify-content-center min-vh-100">
+    
+    <section class="d-flex align-items-center justify-content-center">
+      <div class="row mb-5 justify-content-center">
+        
+        <div class="col-12 col-md-8 col-lg-6 text-center content-box p-4 p-md-5">
+          <h1 id="welcome-message" class="fw-bold mb-3 text-center text-dark"></h1>
+
+          <h2 class="h3 fw-bold mb-3 text-center text-dark"> Welcome to Kiki's Delivery Service</h2>
+          
+          <p class="content">
+            Kiki's Delivery Service (Japanese: 魔女の宅急便, Hepburn:Majo no Takkyūbin, lit. 'Witch's Express Home Delivery') is a 1989.
+            <br><br>
+            Japanese animated coming-of-age fantasy film written, produced, and directed by Hayao Miyazaki. In this anime feature, 13-year-old Kiki moves to a seaside town with her talking cat, Jiji, to spend a year alone, in accordance with her village's tradition for witches in training. After learning to control her broomstick, Kiki sets up a flying courier service and soon becomes a fixture in the community. But when the insecure young witch begins questioning herself and loses her magic abilities, she must overcome her self-doubt to get her powers back.
+          </p>
+
+          <a href="#" class="btn btn-light custom-btn px-4 py-2 mt-2">Read More</a>
+          <button id="logout-button" type="button" class="btn btn-outline-dark px-4 py-2 mt-2">Log out</button>
+        </div>
+
+      </div>
+  </section>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+      const username = sessionStorage.getItem("username");
+
+      if (!username) {
+        window.location.replace("./login.html");
+      } else {
+        document.getElementById("logout-button").addEventListener("click", function () {
+          sessionStorage.removeItem("username");
+          window.location.replace("./login.html");
+        });
+      }
+    </script>
+  </body>
+</html>
